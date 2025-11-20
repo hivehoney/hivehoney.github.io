@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hivehoney.github.io/sitemap.xml

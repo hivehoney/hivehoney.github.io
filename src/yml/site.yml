@@ -1,13 +1,23 @@
 name: HiveHoney
-title: Jekflix | A blog theme for Jekyll
-description: Jekflix is a template for Jekyll inspired by Netflix and made by
-  Thiago Rossener.
+title: "HiveHoney Dev Blog"
+description: "Java, Spring, algorithms, and daily life notes."
 tags:
   - blog
-  - template
-  - jekyll
-  - theme
-  - netlify
+  - development
+  - java
+  - spring
+  - spring-boot
+  - algorithm
+  - coding-test
+  - backend
+  - programming
+  - daily
+  - diary
+  - korea
+language: "en"
+languages:
+  - en
+  - ko
 show_hero: true
 menu:
   - title: Home
@@ -18,7 +28,7 @@ menu:
     url: /contact
   - title: Feed
     url: /feed.xml
-email: youremail@test.com
+email: hive0917@gmail.com
 # See: https://disqus.com/
 disqus_username: disqus_username
 # Contact Form Setting
