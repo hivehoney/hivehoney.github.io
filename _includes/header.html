@@ -31,26 +31,40 @@
     {% endif %}
     <!-- 언어 토글 -->
     <div class="bar-header__right">
-        <div class="lang-switch">
-            <div class="lang-switch__inner">
-              <span class="lang-switch__icon">
-                <img src="{{ '/assets/img/icons/translations-dark.svg' | relative_url }}" alt="Language">
-              </span>
-              <button type="button" data-lang-toggle="ko" class="lang-switch__item lang-switch__item--ko"
-                {% if ko_page %}data-lang-url="{{ ko_page.url | relative_url }}"{% endif %} >
-                Korean
-              </button>
-              <span class="lang-switch__divider">|</span>
-              <button type="button" data-lang-toggle="en" class="lang-switch__item lang-switch__item--en"
-                {% if en_page %}data-lang-url="{{ en_page.url | relative_url }}"{% endif %} >
-                English
-              </button>
-            </div>
-          </div>
-    <!-- /언어 토글 -->
-    <a id="search" class="dosearch" role="button">
-        <svg class="icon-search"><use xlink:href="#icon-search"></use></svg>
-    </a>
+      <div class="lang-switch">
+        <div class="lang-switch__inner">
+          <span class="lang-switch__icon">
+            <img class="lang-switch__icon-img" src="{{ '/assets/img/icons/translations-dark.svg' | relative_url }}">
+          </span>
+          <button type="button" data-lang-toggle="ko" class="lang-switch__item lang-switch__item--ko"
+            {% if ko_page %}data-lang-url="{{ ko_page.url | relative_url }}"{% endif %} >
+            Korean
+          </button>
+          <span class="lang-switch__divider">|</span>
+          <button type="button" data-lang-toggle="en" class="lang-switch__item lang-switch__item--en"
+            {% if en_page %}data-lang-url="{{ en_page.url | relative_url }}"{% endif %} >
+            English
+          </button>
+        </div>
+      </div>
+      <div class="lang-switch theme-switch theme-switch--dark-active" id="theme-switch">
+        <div class="lang-switch__inner">
+          <span class="lang-switch__icon">
+            <img class="theme-switch__icon-img" src="{{ '/assets/img/icons/contrast-dark.svg' | relative_url }}" alt="Theme">
+          </span>
+          <button type="button" data-theme-toggle="dark" class="lang-switch__item lang-switch__item--dark">
+            Dark
+          </button>
+          <span class="lang-switch__divider">|</span>
+          <button type="button" data-theme-toggle="light" class="lang-switch__item lang-switch__item--light">
+            Light
+          </button>
+        </div>
+      </div>
+      <!-- /언어 토글 -->
+      <a id="search" class="dosearch" role="button">
+          <svg class="icon-search"><use xlink:href="#icon-search"></use></svg>
+      </a>
     </div>
 </header>
 

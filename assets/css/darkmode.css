@@ -1,0 +1,335 @@
+/* ===================================
+   공통: 전환 효과 / 기본 설정
+   =================================== */
+
+   body,
+   .post-tags,
+   .post-tags li,
+   .post-tags a,
+   .tags,
+   .tags a,
+   .box-info {
+     transition:
+       background-color 160ms ease,
+       color 160ms ease,
+       border-color 160ms ease;
+   }
+   
+   /* ===================================
+      테마별 기본 바탕 + 기본 텍스트
+      =================================== */
+   
+   /* 다크 모드 */
+   html[data-theme='dark'] body {
+     background-color: #141414;
+     color: #e7e7f0;
+   }
+   
+   /* 라이트 모드 */
+   html[data-theme='light'] body {
+     background-color: #ffffff;
+     color: #222222;
+   }
+   
+   /* ===================================
+      본문 텍스트 / 리스트
+      =================================== */
+   
+   html[data-theme='dark'] .post .post-content,
+   html[data-theme='dark'] .post .post-content p,
+   html[data-theme='dark'] .post .post-content li,
+   html[data-theme='light'] .post .post-content,
+   html[data-theme='light'] .post .post-content p,
+   html[data-theme='light'] .post .post-content li {
+     color: inherit; /* body 색 따라감 */
+   }
+   
+   /* ===================================
+      글 제목 (post-title)
+      =================================== */
+   
+   html[data-theme='dark'] .post-title,
+   html[data-theme='dark'] .post-title a {
+     color: #ffffff;
+   }
+   
+   html[data-theme='light'] .post-title,
+   html[data-theme='light'] .post-title a {
+     color: #111111;
+   }
+   
+   /* ===================================
+      본문 내 제목들 (h1~h6)
+      =================================== */
+   
+   html[data-theme='dark'] .post .post-content h1,
+   html[data-theme='dark'] .post .post-content h2,
+   html[data-theme='dark'] .post .post-content h3,
+   html[data-theme='dark'] .post .post-content h4,
+   html[data-theme='dark'] .post .post-content h5,
+   html[data-theme='dark'] .post .post-content h6 {
+     color: #ffffff;
+   }
+   
+   html[data-theme='light'] .post .post-content h1,
+   html[data-theme='light'] .post .post-content h2,
+   html[data-theme='light'] .post .post-content h3,
+   html[data-theme='light'] .post .post-content h4,
+   html[data-theme='light'] .post .post-content h5,
+   html[data-theme='light'] .post .post-content h6 {
+     color: #111111;
+   }
+   
+   /* ===================================
+      링크 색상
+      =================================== */
+   
+   html[data-theme='dark'] .post .post-content a {
+     color: #ff0a16;
+   }
+   
+   html[data-theme='light'] .post .post-content a {
+     color: #e50914;
+   }
+   
+   /* ===================================
+      인용문 (blockquote)
+      =================================== */
+   
+   html[data-theme='dark'] blockquote {
+     color: #9a9aa5;
+     border-left-color: #333333;
+   }
+   
+   html[data-theme='light'] blockquote {
+     color: #555555;
+     border-left-color: #cccccc;
+   }
+   
+   /* ===================================
+      테마 스위치 (Dark / Light 토글 상태)
+      =================================== */
+   
+   .theme-switch--dark-active .lang-switch__item--dark,
+   .theme-switch--light-active .lang-switch__item--light {
+     color: var(--gray5);
+     font-weight: 700;
+   }
+   
+   .theme-switch--dark-active .lang-switch__item--light,
+   .theme-switch--light-active .lang-switch__item--dark {
+     color: var(--gray2);
+     font-weight: 400;
+   }
+   
+   /* ===================================
+      설명/요약 텍스트 (description / excerpt / subtitle)
+      =================================== */
+   
+   /* 다크 모드 */
+   html[data-theme='dark'] 
+     .post-description,
+   html[data-theme='dark'] 
+     .post-excerpt,
+   html[data-theme='dark'] 
+     .post-subtitle,
+   html[data-theme='dark'] 
+     .description {
+     color: #c7c7d0;
+   }
+   
+   /* 라이트 모드 */
+   html[data-theme='light'] 
+     .post-description,
+   html[data-theme='light'] 
+     .post-excerpt,
+   html[data-theme='light'] 
+     .post-subtitle,
+   html[data-theme='light'] 
+     .description {
+     color: #555555;
+   }
+   
+   /* ===================================
+      태그 영역 (.post-tags / .tags)
+      =================================== */
+   
+   /* 다크 모드 태그 */
+   html[data-theme='dark'] .post-tags a,
+   html[data-theme='dark'] .tags a,
+   html[data-theme='dark'] .box-item .box-body .tags a {
+     background-color: rgba(255, 255, 255, 0.06);
+     color: #e7e7f0;
+     border: 1px solid rgba(255, 255, 255, 0.12);
+   }
+   
+   /* 라이트 모드 태그 */
+   html[data-theme='light'] .post-tags a,
+   html[data-theme='light'] .tags a,
+   html[data-theme='light'] .box-item .box-body .tags a {
+     background-color: #f4f4f7;
+     color: #444444;
+     border: 1px solid #dddddd;
+   }
+   
+   /* hover */
+   html[data-theme='dark'] .post-tags a:hover,
+   html[data-theme='dark'] .tags a:hover {
+     background-color: rgba(255, 255, 255, 0.12);
+     color: #ffffff;
+   }
+   
+   html[data-theme='light'] .post-tags a:hover,
+   html[data-theme='light'] .tags a:hover {
+     background-color: #e9e9f2;
+     color: #222222;
+   }
+   
+   /* ===================================
+      날짜 (time.date)
+      =================================== */
+   
+   html[data-theme='dark'] .date {
+     color: #9a9aa5;
+   }
+   
+   html[data-theme='light'] .date {
+     color: #777777;
+   }
+   
+   /* ===================================
+      카테고리 (category)
+      =================================== */
+   
+   /* 다크 모드 */
+   html[data-theme='dark'] 
+     .post-category,
+   html[data-theme='dark'] 
+     .post-categories,
+   html[data-theme='dark'] 
+     .post-meta .category,
+   html[data-theme='dark'] 
+     .category {
+     color: #9a9aa5;
+   }
+   
+   /* 라이트 모드 */
+   html[data-theme='light'] 
+     .post-category,
+   html[data-theme='light'] 
+     .post-categories,
+   html[data-theme='light'] 
+     .post-meta .category,
+   html[data-theme='light'] 
+     .category {
+     color: #666666;
+   }
+   
+   /* ===================================
+      정보 박스 (box-info)
+      =================================== */
+   
+   html[data-theme='dark'] .box-info {
+     background-color: #181818;
+     color: #e7e7f0;
+     border: 1px solid #333333;
+   }
+   
+   html[data-theme='light'] .box-info {
+     background-color: #f5f5f9;
+     color: #333333;
+     border: 1px solid #dddddd;
+   }
+   
+   html[data-theme='dark'] .box-info__title {
+     color: #ffffff;
+   }
+   
+   html[data-theme='light'] .box-info__title {
+     color: #111111;
+   }
+   
+   html[data-theme='dark'] .box-info__text {
+     color: #c7c7d0;
+   }
+   
+   html[data-theme='light'] .box-info__text {
+     color: #555555;
+   }
+   
+   /* ===================================
+      카드 메타 정보 (time, category a)
+      =================================== */
+   
+   /* 기본 색상: 다크 모드 */
+   html[data-theme='dark'] .box-item .box-body time,
+   html[data-theme='dark'] .box-item .category a {
+     color: #9a9aa5;
+   }
+   
+   /* 기본 색상: 라이트 모드 */
+   html[data-theme='light'] .box-item .box-body time,
+   html[data-theme='light'] .box-item .category a {
+     color: #777777;
+   }
+   
+   /* 링크 기본 스타일 (선택) */
+   .box-item .category a {
+     text-decoration: none;
+   }
+   
+   /* hover 시 카드 텍스트 색상 */
+   
+   /* 라이트 모드: hover 해도 어두운 글자 유지 */
+   html[data-theme='light'] .box-item:hover .box-body time,
+   html[data-theme='light'] .box-item:hover .box-body p {
+     color: #222222;
+   }
+   
+   /* 다크 모드: hover 시만 흰색으로 강조 */
+   html[data-theme='dark'] .box-item:hover .box-body time,
+   html[data-theme='dark'] .box-item:hover .box-body p {
+     color: #ffffff;
+   }
+   
+body.light:not(.main-page) .bar-header .logo a,body.light:not(.main-page) .bar-header .version {
+    color: #141414
+}
+
+body.light:not(.main-page) .bar-header .icon-search, body.light:not(.main-page) .bar-header .icon-menu {
+    fill: #141414;
+}
+
+/* 스크롤 후(상단 고정 헤더) 언어/테마 토글 글자 색 */
+
+body.light:not(.main-page) .bar-header .lang-switch__item,
+body.light:not(.main-page) .bar-header .lang-switch__divider {
+  color: #141414;   /* 밝은 배경 위에서 잘 보이는 어두운 글자 */
+}
+
+/* 활성된 항목은 살짝 더 진하게 + 굵게 */
+body.light:not(.main-page) .theme-switch--dark-active .lang-switch__item--dark,
+body.light:not(.main-page) .theme-switch--light-active .lang-switch__item--light {
+  color: #141414;
+  font-weight: 700;
+}
+
+/* 페이지 맨 위(헤더가 어두울 때) – 흰색 아이콘용 */
+.bar-header .lang-switch__icon-img {
+    content: url("/assets/img/icons/translations-dark.svg");
+}
+  
+  /* 스크롤 내려서 body.light:not(.main-page) 붙었을 때 – 검정 아이콘용 */
+body.light:not(.main-page) .bar-header .lang-switch__icon-img {
+    content: url("/assets/img/icons/translations.svg");
+}
+
+/* 페이지 맨 위(헤더가 어두울 때) – 흰색 아이콘용 */
+.bar-header .theme-switch__icon-img {
+    content: url("/assets/img/icons/contrast-dark.svg");
+}
+  
+  /* 스크롤 내려서 body.light:not(.main-page) 붙었을 때 – 검정 아이콘용 */
+body.light:not(.main-page) .bar-header .theme-switch__icon-img {
+    content: url("/assets/img/icons/contrast.svg");
+}

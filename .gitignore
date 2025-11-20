@@ -4,3 +4,7 @@ _site
 .jekyll-metadata
 vendor
 node_modules
+# Ruby 번들
+vendor/bundle/
+package-lock.json
+.frontmatter

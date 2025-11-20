@@ -92,6 +92,7 @@
     <link rel="stylesheet" href="{{ '/assets/css/styles.css' | prepend: site.baseurl }}">
     <link rel="canonical" href="{{ url }}">
     <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/darkmode.css' | relative_url }}">
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | prepend: site.baseurl | prepend: site.url }}" />
 
     <!-- Include extra styles -->
@@ -101,4 +102,5 @@
     <script>
         document.querySelector('html').classList.remove('no-js');
     </script>
+    <script src="{{ '/assets/js/theme-toggle.js' | relative_url }}"></script>
 </head>
