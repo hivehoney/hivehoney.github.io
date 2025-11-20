@@ -1,0 +1,60 @@
+<header class="bar-header">
+    <a id="menu" role="button">
+        <svg id="open" class="icon-menu"><use xlink:href="#icon-menu"></use></svg>
+    </a>
+    <h1 class="logo">
+        {% if page.lang == "ko" %}
+          <a class="logo" href="{{ '/ko/' | relative_url }}">
+            {{ site.name }}
+          </a>
+        {% else %}
+          <a class="logo" href="{{ '/' | relative_url }}">
+            {{ site.name }}
+          </a>
+        {% endif %}
+    </h1>
+    {%- comment -%}
+      1) 홈 페이지인 경우: layout: home 기준으로 siblings 찾기
+    {%- endcomment -%}
+    {% if page.layout == "home" %}
+      {% assign home_pages = site.pages | where:"layout","home" %}
+      {% assign ko_page = home_pages | where:"lang","ko" | first %}
+      {% assign en_page = home_pages | where:"lang","en" | first %}
+
+    {%- comment -%}
+      2) 포스트 페이지인 경우: lang-ref 기준으로 posts siblings 찾기 (예전 로직)
+    {%- endcomment -%}
+    {%- elsif page.lang-ref -%}
+      {% assign siblings = site.posts | where:"lang-ref", page.lang-ref %}
+      {% assign ko_page = siblings | where:"lang","ko" | first %}
+      {% assign en_page = siblings | where:"lang","en" | first %}
+    {% endif %}
+    <!-- 언어 토글 -->
+    <div class="bar-header__right">
+        <div class="lang-switch">
+            <div class="lang-switch__inner">
+              <span class="lang-switch__icon">
+                <img src="{{ '/assets/img/icons/translations-dark.svg' | relative_url }}" alt="Language">
+              </span>
+              <button type="button" data-lang-toggle="ko" class="lang-switch__item lang-switch__item--ko"
+                {% if ko_page %}data-lang-url="{{ ko_page.url | relative_url }}"{% endif %} >
+                Korean
+              </button>
+              <span class="lang-switch__divider">|</span>
+              <button type="button" data-lang-toggle="en" class="lang-switch__item lang-switch__item--en"
+                {% if en_page %}data-lang-url="{{ en_page.url | relative_url }}"{% endif %} >
+                English
+              </button>
+            </div>
+          </div>
+    <!-- /언어 토글 -->
+    <a id="search" class="dosearch" role="button">
+        <svg class="icon-search"><use xlink:href="#icon-search"></use></svg>
+    </a>
+    </div>
+</header>
+
+<div id="mask" class="overlay"></div>
+
+{% include menu.html %}
+{% include search.html %}

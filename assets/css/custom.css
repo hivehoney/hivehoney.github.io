@@ -1,0 +1,136 @@
+/* 색 팔레트 (대충 gray2 / gray5 가이드) */
+:root {
+    --gray2: #9a9aa5;
+    --gray5: #e7e7f0;
+  }
+  
+/* 헤더 전체를 플렉스로 정렬 */
+.bar-header {
+  display: flex;
+  align-items: center;
+}
+
+/* 로고가 왼쪽에서 쭉 차지하고, 오른쪽 묶음을 끝으로 밀어냄 */
+.bar-header .logo {
+  margin: 0;
+  margin-right: auto;  /* 이게 핵심: 오른쪽 요소들을 끝으로 밀어냄 */
+}
+
+/* 오른쪽 액션 묶음: 언어 토글 + 검색 */
+.bar-header__right {
+  display: flex;
+  align-items: center;
+  gap: 12px;      /* 토글과 검색 사이 간격 (원하면 숫자 조절) */
+}
+
+/* 토글 자체는 살짝 오른쪽 여유 */
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* 공통 레이아웃 */
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gray2);
+}
+
+/* 안쪽 컨테이너 – x 이동 애니메이션 대상 */
+.lang-switch__inner {
+  display: inline-flex;
+  align-items: center;
+  /* spring 느낌 나는 easing 대략 */
+  transition:
+    transform 260ms cubic-bezier(0.22, 1.2, 0.36, 1),
+    color 180ms ease;
+}
+
+/* 아이콘 */
+.lang-switch__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 아이콘 크기 */
+.lang-switch__icon img {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
+/* 텍스트 간격 / divider */
+.lang-switch__item {
+  background: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+
+  /* 여기부터가 핵심 */
+  font-family: inherit;        /* 헤더랑 같은 폰트 사용 */
+  font-size: 16px;         /* 대략 14px */
+  line-height: 1.4;
+  letter-spacing: 0.02em;      /* 살짝 좁고 또렷하게 */
+  font-weight: 400;            /* 기본은 보통 굵기 */
+  color: var(--gray2);
+}
+
+.lang-switch__divider {
+  display: inline-block;
+  margin: 0 6px;     /* ko–divider / divider–en 간격 6px */
+  width: 1px;        /* divider width = 1px */
+  text-align: center;
+  color: var(--gray2);
+}
+
+/* 활성 언어 색: gray5 + bold */
+.lang-switch--ko-active .lang-switch__item--ko,
+.lang-switch--en-active .lang-switch__item--en {
+  color: var(--gray5);
+  font-weight: 700;
+}
+
+/* 비활성 언어는 회색 */
+.lang-switch--ko-active .lang-switch__item--en,
+.lang-switch--en-active .lang-switch__item--ko {
+  color: var(--gray2);
+  font-weight: 400;
+}
+
+/* 모바일 */
+@media (max-width: 767px) {
+  .lang-switch__icon {
+    margin-right: 8px;   /* 조금만 띄우자 */
+  }
+
+  .lang-switch--ko-active .lang-switch__inner {
+    transform: translateX(0);
+  }
+
+  .lang-switch--en-active .lang-switch__inner {
+    transform: translateX(0);  /* ← 33px 말고 0 */
+  }
+}
+
+/* 데스크톱 */
+@media (min-width: 768px) {
+  .lang-switch__icon {
+    margin-right: 10px;   /* 24 → 10 정도로 줄이기 */
+  }
+
+  .lang-switch--ko-active .lang-switch__inner {
+    transform: translateX(0);
+  }
+
+  .lang-switch--en-active .lang-switch__inner {
+    transform: translateX(0);  /* ← 37px 말고 0 */
+  }
+}
+
+/* hover 시 살짝 강조 */
+.lang-switch__item:hover {
+  color: var(--gray5);
+}
