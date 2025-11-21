@@ -101,7 +101,8 @@ baseurl: ""
 # Plugins
 plugins:
   - jekyll-paginate
-  - jekyll-paginate-content
+  - jekyll-feed
+  # - jekyll-paginate-content
   - jekyll-sitemap
 
 # Exclude my node related stuff
