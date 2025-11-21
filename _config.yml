@@ -1,15 +1,23 @@
-# Site Settings
-language: en
-name: HiveHoney
-title: Jekflix | A blog theme for Jekyll
-description: Jekflix is a template for Jekyll inspired by Netflix and made by
-  Thiago Rossener.
+language: "en"
+languages:
+  - en
+  - ko
+name: "HiveHoney"
+title: "HiveHoney Dev Blog"
+description: "Java, Spring, algorithms, and daily life notes."
 tags:
   - blog
-  - template
-  - jekyll
-  - theme
-  - netlify
+  - development
+  - java
+  - spring
+  - spring-boot
+  - algorithm
+  - coding-test
+  - backend
+  - programming
+  - daily
+  - diary
+  - korea
 show_hero: true
 menu:
   - title: Home
@@ -87,10 +95,15 @@ paginate_content:
 sass:
   style: compressed
 
+url: "https://hivehoney.github.io"
+baseurl: ""                       
+
 # Plugins
 plugins:
   - jekyll-paginate
-  - jekyll-paginate-content
+  - jekyll-feed
+  # - jekyll-paginate-content
+  - jekyll-sitemap
 
 # Exclude my node related stuff
 exclude: [
